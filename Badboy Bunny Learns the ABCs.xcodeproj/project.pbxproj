@@ -89,6 +89,8 @@
 		BD2B46C51EB212B9008D88B8 /* XRayScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD2B46C41EB212B9008D88B8 /* XRayScene.sks */; };
 		BD2B46C71EB21B3B008D88B8 /* LevelTScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B46C61EB21B3B008D88B8 /* LevelTScene.swift */; };
 		BD2B46C91EB21D52008D88B8 /* PlatformerBaseScene+SKSLoadingFunctionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B46C81EB21D52008D88B8 /* PlatformerBaseScene+SKSLoadingFunctionality.swift */; };
+		BD2B46CB1EB227A3008D88B8 /* CloudMovement.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD2B46CA1EB227A3008D88B8 /* CloudMovement.sks */; };
+		BD2B46CD1EB2373B008D88B8 /* PlatformerBaseScene+SKPhysicsContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B46CC1EB2373B008D88B8 /* PlatformerBaseScene+SKPhysicsContactDelegate.swift */; };
 		BD437A711EB1C0EE006CD3BA /* Alien+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD437A701EB1C0EE006CD3BA /* Alien+Animations.swift */; };
 /* End PBXBuildFile section */
 
@@ -177,6 +179,8 @@
 		BD2B46C41EB212B9008D88B8 /* XRayScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = XRayScene.sks; sourceTree = "<group>"; };
 		BD2B46C61EB21B3B008D88B8 /* LevelTScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelTScene.swift; sourceTree = "<group>"; };
 		BD2B46C81EB21D52008D88B8 /* PlatformerBaseScene+SKSLoadingFunctionality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlatformerBaseScene+SKSLoadingFunctionality.swift"; sourceTree = "<group>"; };
+		BD2B46CA1EB227A3008D88B8 /* CloudMovement.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CloudMovement.sks; sourceTree = "<group>"; };
+		BD2B46CC1EB2373B008D88B8 /* PlatformerBaseScene+SKPhysicsContactDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlatformerBaseScene+SKPhysicsContactDelegate.swift"; sourceTree = "<group>"; };
 		BD437A701EB1C0EE006CD3BA /* Alien+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alien+Animations.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -302,6 +306,7 @@
 				BD2B46B61EB21007008D88B8 /* CloudScene.sks */,
 				BD2B46B81EB2101C008D88B8 /* AlienScene.sks */,
 				BD2B46BA1EB21025008D88B8 /* PlaneScene.sks */,
+				BD2B46CA1EB227A3008D88B8 /* CloudMovement.sks */,
 				BD2B46BC1EB21098008D88B8 /* ForestScene.sks */,
 				BD2B46BE1EB21241008D88B8 /* NumberScene.sks */,
 				BD2B46C01EB21297008D88B8 /* HouseScene.sks */,
@@ -357,6 +362,7 @@
 				BD2B46C81EB21D52008D88B8 /* PlatformerBaseScene+SKSLoadingFunctionality.swift */,
 				BD29FC5F1EB1E28E00D3A4E2 /* LevelBScene.swift */,
 				BD2B46C61EB21B3B008D88B8 /* LevelTScene.swift */,
+				BD2B46CC1EB2373B008D88B8 /* PlatformerBaseScene+SKPhysicsContactDelegate.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -433,6 +439,7 @@
 				BD29FC621EB1E31500D3A4E2 /* BeeScene.sks in Resources */,
 				BD0B99681EB17D510027746F /* LevelIScene.sks in Resources */,
 				BD0B99931EB17DBF0027746F /* SnowEmitter.sks in Resources */,
+				BD2B46CB1EB227A3008D88B8 /* CloudMovement.sks in Resources */,
 				BD2B46C31EB212A8008D88B8 /* ZooScene.sks in Resources */,
 				BD0B992D1EB17D080027746F /* CastleScene.sks in Resources */,
 				BD2B46B91EB2101C008D88B8 /* AlienScene.sks in Resources */,
@@ -497,6 +504,7 @@
 				BD0B99371EB17D120027746F /* CoreMotionInputComponent.swift in Sources */,
 				BD0B99351EB17D120027746F /* ContactHandlerComponent.swift in Sources */,
 				BD0B992E1EB17D080027746F /* CollisionConfiguration.swift in Sources */,
+				BD2B46CD1EB2373B008D88B8 /* PlatformerBaseScene+SKPhysicsContactDelegate.swift in Sources */,
 				BD0B99391EB17D120027746F /* EnemyAciveState.swift in Sources */,
 				BD0B99861EB17DB80027746F /* PlatformerLevelScenePauseState.swift in Sources */,
 				BD0B997B1EB17DB00027746F /* PhysicsComponent.swift in Sources */,

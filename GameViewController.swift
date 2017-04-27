@@ -30,7 +30,7 @@ class GameViewController: UIViewController {
         let beeScene = LevelBScene(sksFileName: "BeeScene", size: view.bounds.size)
         let treeScene = LevelTScene(sksFileName: "TreeScene", size: view.bounds.size)
         
-        skView.presentScene(treeScene)
+        skView.presentScene(platformerBaseScene)
         
         
     }

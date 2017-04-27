@@ -98,6 +98,18 @@ class AlienAttackState: GKState{
     let alienEntity: Alien
     var targetNode: SKSpriteNode?
     
+    var obstacleGraph: GKObstacleGraph<GKGraphNode2D>? {
+        get{
+            
+            if let scene = alienEntity.component(ofType: RenderComponent.self)?.node.scene as? PlatformerBaseScene{
+                
+                return scene.obstacleGraph
+            }
+            
+            return nil
+        }
+    }
+    
     init(alienEntity: Alien){
         
         self.alienEntity = alienEntity
@@ -118,10 +130,51 @@ class AlienAttackState: GKState{
             if targetNodeComponent.playerHasLeftProximity{
                 stateMachine?.enter(AlienActiveState.self)
             } else if let node = alienEntity.component(ofType: RenderComponent.self)?.node {
-                node.lerpToPoint(targetPoint: targetNodeComponent.targetNode.position, withLerpFactor: 0.05)
-                
-            }
+                //node.lerpToPoint(targetPoint: targetNodeComponent.targetNode.position, withLerpFactor: 0.05)
             
+            
+                guard let targetGraphNode = alienEntity.component(ofType: TargetNodeComponent.self)?.targetNode.entity?.component(ofType: GraphNodeComponent.self)?.graphNode else {
+                    print("Could not get graph node for target i.e. the player")
+                    return
+                }
+                
+                
+                guard let startGraphNode = alienEntity.component(ofType: GraphNodeComponent.self)?.graphNode else {
+                    print("Could not get graph node for the start point i.e. the alien")
+                    return
+                }
+                
+                guard let obstacleGraph = obstacleGraph else {
+                    print("Could not get obstacle graph")
+                    return
+                }
+                    
+                        print("Connecting start and end nodes to obstacle graph...")
+                        obstacleGraph.connectUsingObstacles(node: startGraphNode)
+                        obstacleGraph.connectUsingObstacles(node: targetGraphNode)
+                    
+                        print("Determining attack path...")
+                        let attackPath = obstacleGraph.findPath(from: startGraphNode, to: targetGraphNode)
+                    
+                    for graphNode in attackPath{
+                        
+                        let graphNode = graphNode as! GKGraphNode2D
+                        
+                        let nextPoint = graphNode.getCGPointFromGraphNodeCoordinates()
+                        let moveToNextPointAction = SKAction.move(to: nextPoint, duration: 4.00)
+                        
+                        print("Executing move to next point in path..")
+                        node.run(moveToNextPointAction)
+                    }
+                    
+                    obstacleGraph.remove([startGraphNode,targetGraphNode])
+                    
+                
+                
+ 
+            
+            } //
+        
         }
         
     }
@@ -140,6 +193,10 @@ class AlienAttackState: GKState{
         
             let attackAnimation = SKAction.repeatForever(colorizationSequence)
             renderNode.run(attackAnimation, withKey: "attackAnimation")
+        }
+        
+        if let agentComponent = alienEntity.component(ofType: AgentComponent.self){
+            agentComponent.hasReachedGoal = false
         }
     }
     
@@ -183,4 +240,17 @@ class AlienAttackState: GKState{
         NotificationCenter.default.removeObserver(self)
     }
 
+}
+
+
+extension GKGraphNode2D{
+    
+    func getCGPointFromGraphNodeCoordinates() -> CGPoint{
+        
+        let xPos = CGFloat(self.position.x)
+        let yPos = CGFloat(self.position.y)
+        
+        return CGPoint(x: xPos, y: yPos)
+    }
+    
 }

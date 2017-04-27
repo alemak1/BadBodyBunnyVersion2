@@ -82,13 +82,6 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
         loadNodesFromSKSceneFile()
         
         
-        /** After creating GKObstalce graph from scene file, the player's graph node must be added to the obstacle graph
-
-        **/
-        
-        if let playerGraphNode = player.component(ofType: GraphNodeComponent.self)?.graphNode{
-            obstacleGraph?.connectUsingObstacles(node: playerGraphNode)
-        }
        
         /** Scene-level state machine enters the active state **/
         stateMachine.enter(PlatformerLevelSceneActiveState.self)
@@ -226,79 +219,7 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
         MainMotionManager.sharedMotionManager.deviceMotionUpdateInterval = 0.50
     }
    
-    
-    func didBegin(_ contact: SKPhysicsContact) {
         
-        guard let playerPhysicsBody = player.component(ofType: PhysicsComponent.self)?.physicsBody else { return }
-        
-        let playerBody = (contact.bodyA.categoryBitMask & CollisionConfiguration.Player.categoryMask > 0) ? contact.bodyA : contact.bodyB
-        
-        let otherBody = (contact.bodyA.categoryBitMask & CollisionConfiguration.Player.categoryMask > 0) ? contact.bodyB : contact.bodyA
-        
-        switch(otherBody.categoryBitMask){
-            case CollisionConfiguration.Barrier.categoryMask:
-              //  NotificationCenter.default.post(name: Notification.Name.PlayerStartedBarrierContactNotification, object: nil, userInfo: nil)
-              
-                break
-            case CollisionConfiguration.Letter.categoryMask:
-                print("Player contacted the Letter")
-                otherBody.node?.removeFromParent()
-                letterFound = true
-                break
-            case CollisionConfiguration.Enemy.categoryMask:
-                
-                if let contactingEnemyNodeName = otherBody.node?.name{
-                    let userinfo = ["enemyNodeName":contactingEnemyNodeName]
-                
-                    NotificationCenter.default.post(name: Notification.Name.PlayerDidTakeDamageNotification, object: nil, userInfo: userinfo)
-              
-                }
-                break
-        case CollisionConfiguration.Other.categoryMask:
-            if let contactingBodyName = otherBody.node?.name{
-                
-                if contactingBodyName == "Ladder"{
-                    
-                    NotificationCenter.default.post(name: Notification.Name.PlayerStartedContactWithLadder, object: nil, userInfo: nil)
-                }
-            }
-                break
-            
-            default:
-                break
-        }
-    }
-    
-    func didEnd(_ contact: SKPhysicsContact) {
-        
-        
-        guard let playerPhysicsBody = player.component(ofType: PhysicsComponent.self)?.physicsBody else { return }
-        
-        let playerBody = (contact.bodyA.categoryBitMask & CollisionConfiguration.Player.categoryMask > 0) ? contact.bodyA : contact.bodyB
-        
-        let otherBody = (contact.bodyA.categoryBitMask & CollisionConfiguration.Player.categoryMask > 0) ? contact.bodyB : contact.bodyA
-        
-        switch(otherBody.contactTestBitMask){
-            case CollisionConfiguration.Barrier.contactMask:
-               // NotificationCenter.default.post(name: Notification.Name.PlayerStoppedBarrierContactNotification, object: nil, userInfo: nil)
-                    
- 
-                break
-        case CollisionConfiguration.Other.categoryMask:
-            if let contactingBodyName = otherBody.node?.name{
-                print("Contact wiht 'other' was made,checking if it's ladder...")
-                if contactingBodyName == "Ladder"{
-                    print("Contact with ladder was made. Sending notification...")
-                    NotificationCenter.default.post(name: Notification.Name.PlayerEndedContactWithLadder, object: nil, userInfo: nil)
-                }
-            }
-            break
-
-            default:
-                break
-        }
-    }
-    
     func registerForNotifications(){
         NotificationCenter.default.addObserver(self, selector: #selector(PlatformerBaseScene.rescaleSceneForDeviceOrientationChange), name: Notification.Name.UIDeviceOrientationDidChange, object: nil)
     }

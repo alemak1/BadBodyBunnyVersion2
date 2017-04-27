@@ -10,6 +10,7 @@ import Foundation
 import GameplayKit
 import SpriteKit
 
+
 /** The target node tests for whether or not the player or other target has entered its proximity, as defined by a minimum proximity distance
  
  
@@ -19,7 +20,9 @@ class TargetNodeComponent: GKComponent{
     
     
     var targetNode: SKSpriteNode
+    
     var renderNode: SKSpriteNode?
+    
     var proximityDistance: Double
     var playerHasEnteredProximity: Bool = false
     var playerHasLeftProximity: Bool = true
@@ -27,6 +30,9 @@ class TargetNodeComponent: GKComponent{
     init(targetNode: SKSpriteNode, proximityDistance: Double){
         self.targetNode = targetNode
         self.proximityDistance = proximityDistance
+        
+    
+        
         super.init()
         
     }
@@ -41,6 +47,7 @@ class TargetNodeComponent: GKComponent{
     
     override func willRemoveFromEntity() {
         renderNode = nil
+
     }
     
     override func update(deltaTime seconds: TimeInterval) {
@@ -51,7 +58,7 @@ class TargetNodeComponent: GKComponent{
             print("The enemy must have a render node in order to test for player proximity")
             return }
         
-        
+      
         if  playerHasLeftProximity && renderNode.position.getDistanceToPoint(otherPoint: targetNode.position) < proximityDistance{
             print("Checking if enemy has enetered the proximity zone...")
             

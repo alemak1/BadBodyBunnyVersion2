@@ -112,19 +112,19 @@ extension PlatformerBaseScene{
                 
                 Alien.setAlienColor(alienColor: &alienColor, nodeName: nodeName)
                 
-                //let alienEntity = Alien(alienColor: alienColor, position: alienPos, nodeName: "alien\(alienPos)", targetNode: playerNode, minimumProximityDistance: 400.00)
+                
+                let alienEntity = Alien(alienColor: alienColor, position: alienPos, nodeName: "alien\(alienPos)", targetNode: playerNode, minimumProximityDistance: 400.00)
+ 
                 
                 guard let playerAgent = player.component(ofType: AgentComponent.self)?.entityAgent else {
                     print("The player must have an agent component in order to instantiate a smart enemy that utilizes pathfinding to attack the player")
                     return
                 }
                 
-                let alienEntity = Alien(alienColor: alienColor, position: alienPos, nodeName: "alien\(alienPos)", targetAgent: playerAgent, maxPredictionTime: 2.00, maxSpeed: 1.00, maxAcceleration: 1.00)
                 
-                if let alienGraphNode = alienEntity.component(ofType: GraphNodeComponent.self)?.graphNode{
-                    
-                    obstacleGraph?.connectUsingObstacles(node: alienGraphNode)
-                }
+                /**
+                let alienEntity = Alien(alienColor: alienColor, position: alienPos, nodeName: "alien\(alienPos)", targetAgent: playerAgent, maxPredictionTime: 2.00, maxSpeed: 1.00, maxAcceleration: 1.00)
+                **/
                 
                 entityManager.addToWorld(alienEntity)
                 
