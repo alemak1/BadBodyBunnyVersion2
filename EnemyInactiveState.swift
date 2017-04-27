@@ -92,20 +92,26 @@ class AlienInactiveState: GKState{
         
         frameCount = 0.00
         
-        if let renderNode = alienEntity.component(ofType: RenderComponent.self)?.node, renderNode.action(forKey: "attackAnimation") != nil{
-            renderNode.removeAction(forKey: "attackAnimation")
+        if let renderComponent = alienEntity.component(ofType: RenderComponent.self){
+            let renderNode = renderComponent.node
             
+            if renderNode.action(forKey: "attackAnimation") != nil{
+                renderNode.removeAction(forKey: "attackAnimation")
+            }
+            renderComponent.resetToOriginalPosition()
+
         }
         
         
     
         
-        if let alienAnimationComponent = alienEntity.component(ofType: AnimationComponent.self), let alienRenderComponent = alienEntity.component(ofType: RenderComponent.self){
+        if let alienAnimationComponent = alienEntity.component(ofType: AnimationComponent.self){
             
-            alienRenderComponent.resetToOriginalPosition()
             alienAnimationComponent.requestedAnimation = .inactive
             
         }
+        
+      
         
     }
     

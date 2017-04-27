@@ -22,6 +22,8 @@ class PlatformerEntityManager{
         
         let renderComponent = GKComponentSystem(componentClass: RenderComponent.self)
         
+        let graphNodeComponent = GKComponentSystem(componentClass: GraphNodeComponent.self)
+        
         let invisibilityComponent = GKComponentSystem(componentClass: InvisibilityComponent.self)
         
         let nodeNameComponent = GKComponentSystem(componentClass: NodeNameComponent.self)
@@ -46,7 +48,7 @@ class PlatformerEntityManager{
         
         let intelligenceComponent = GKComponentSystem(componentClass: IntelligenceComponent.self)
         
-        return [renderComponent,invisibilityComponent, nodeNameComponent, physicsComponent, motionResponderComponentX, orientationComponent, animationComponent, jumpComponent, agentComponent, healthComponent, targetComponent, intelligenceComponent]
+        return [renderComponent, graphNodeComponent, invisibilityComponent, nodeNameComponent, physicsComponent, motionResponderComponentX, orientationComponent, animationComponent, jumpComponent, agentComponent, healthComponent, targetComponent, intelligenceComponent]
     
     }()
     

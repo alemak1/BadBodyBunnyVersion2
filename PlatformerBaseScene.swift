@@ -14,7 +14,11 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
     var entityManager: PlatformerEntityManager!
     
     var player: Player!
+    
     var worldNode: SKSpriteNode!
+    
+    var obstacleGraph: GKObstacleGraph<GKGraphNode2D>?
+    
     var skSceneFileName: String
     
     let playerContactNotificationQueue = DispatchQueue(label: "playerBarrierContactNotificationQueue", attributes: .concurrent)
@@ -58,29 +62,63 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
         super.didMove(to: view)
         
         super.didMove(to: view)
-        self.physicsWorld.contactDelegate = self
-        self.physicsWorld.gravity = CGVector(dx: 0.00, dy: -4.00)
+        
+        configurePhysicsWorldProperties()
+        
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
+        /** Add the world node **/
+        addWorldNode()
 
-        worldNode = SKSpriteNode()
-        worldNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        worldNode.position = .zero
-        worldNode.scale(to: view.bounds.size)
-        addChild(worldNode)
-        
-        
+        /** Enttiy manager is added after the world node has been added to the scene **/
         entityManager = PlatformerEntityManager(scene: self)
        
+        /** Add player to the entity manager; retain a reference to the player in the scene itself for convenience **/
         player = Player()
         entityManager.addToWorld(player)
+    
         
-        
+        /** Add enemies, obstacles, and backgrounds to world from SKScene file. The player must be initialized before the smart enemies (i.e. those that use the player as a target agent) to be initialized from the scene file **/
         loadNodesFromSKSceneFile()
+        
+        
+        /** After creating GKObstalce graph from scene file, the player's graph node must be added to the obstacle graph
+
+        **/
+        
+        if let playerGraphNode = player.component(ofType: GraphNodeComponent.self)?.graphNode{
+            obstacleGraph?.connectUsingObstacles(node: playerGraphNode)
+        }
        
+        /** Scene-level state machine enters the active state **/
         stateMachine.enter(PlatformerLevelSceneActiveState.self)
     }
     
+    
+    //MARK:     ********* Helper Functions for Setting Up Scene
+    
+    private func addWorldNode(){
+        
+        guard self.view != nil else {
+            fatalError("Error: there must be a view in order for the scene to load")
+        }
+        
+        worldNode = SKSpriteNode()
+        worldNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        worldNode.position = .zero
+        worldNode.scale(to: view!.bounds.size)
+        addChild(worldNode)
+        
+    }
+    
+    private func configurePhysicsWorldProperties(){
+        self.physicsWorld.contactDelegate = self
+        self.physicsWorld.gravity = CGVector(dx: 0.00, dy: -4.00)
+        
+
+    }
+    
+    //MARK: ******** Touch Handlers
     
     func touchDown(atPoint pos : CGPoint) {
      
@@ -267,19 +305,51 @@ extension PlatformerBaseScene{
         
         rootNode.move(toParent: worldNode)
         
+        
+        /** Loop through all the nodes and initialize a GKObstacleGraph with polygons corresponding to non-navigable objects (e.g. islands) in the scene
+ 
+        **/
+        
+        initializeObstacleGraph(rootNode: rootNode)
+
+        
         /**  Loop through all the child nodes of the root node, and if the placeholder node name contains specific keyword names, add letters, enemies, etc.
  
         **/
+        
+        
         for node in rootNode.children{
             if var node = node as? SKNode{
             
+                
                 addEnemy(node: node)
                 addLetterEntity(node: node)
             }
         }
         
         
+        
     
+        
+    }
+    
+    
+    func initializeObstacleGraph(rootNode: SKNode){
+        
+        var obstacleNodes = [SKNode]()
+        
+        for node in rootNode.children{
+            
+            if node.name == "Island"{
+                obstacleNodes.append(node)
+                
+            }
+        }
+        
+        let obstacleGraphNodes = SKNode.obstacles(fromNodeBounds: obstacleNodes)
+        
+        obstacleGraph = GKObstacleGraph(obstacles: obstacleGraphNodes, bufferRadius: 1.00)
+        
         
     }
     
@@ -316,8 +386,22 @@ extension PlatformerBaseScene{
             
                 Alien.setAlienColor(alienColor: &alienColor, nodeName: nodeName)
             
-                let alienEntity = Alien(alienColor: alienColor, position: alienPos, nodeName: "alien\(alienPos)", targetNode: playerNode, minimumProximityDistance: 400.00)
+                //let alienEntity = Alien(alienColor: alienColor, position: alienPos, nodeName: "alien\(alienPos)", targetNode: playerNode, minimumProximityDistance: 400.00)
+                
+                guard let playerAgent = player.component(ofType: AgentComponent.self)?.entityAgent else {
+                    print("The player must have an agent component in order to instantiate a smart enemy that utilizes pathfinding to attack the player")
+                        return
+                }
+                
+                let alienEntity = Alien(alienColor: alienColor, position: alienPos, nodeName: "alien\(alienPos)", targetAgent: playerAgent, maxPredictionTime: 2.00, maxSpeed: 1.00, maxAcceleration: 1.00)
+                
+                if let alienGraphNode = alienEntity.component(ofType: GraphNodeComponent.self)?.graphNode{
+                
+                    obstacleGraph?.connectUsingObstacles(node: alienGraphNode)
+                }
+            
                 entityManager.addToWorld(alienEntity)
+                
             }
         }
     }

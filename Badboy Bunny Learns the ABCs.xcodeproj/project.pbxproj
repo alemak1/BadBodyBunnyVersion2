@@ -75,6 +75,9 @@
 		BD0B99931EB17DBF0027746F /* SnowEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD0B998E1EB17DBF0027746F /* SnowEmitter.sks */; };
 		BD0B99951EB17DC60027746F /* TargetNodeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0B99941EB17DC60027746F /* TargetNodeComponent.swift */; };
 		BD0B999F1EB18DDD0027746F /* GKEntityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0B999E1EB18DDD0027746F /* GKEntityExtension.swift */; };
+		BD29FC5E1EB1D98F00D3A4E2 /* GraphNodeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD29FC5D1EB1D98F00D3A4E2 /* GraphNodeComponent.swift */; };
+		BD29FC601EB1E28E00D3A4E2 /* LevelBScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD29FC5F1EB1E28E00D3A4E2 /* LevelBScene.swift */; };
+		BD29FC621EB1E31500D3A4E2 /* BeeScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD29FC611EB1E31500D3A4E2 /* BeeScene.sks */; };
 		BD437A711EB1C0EE006CD3BA /* Alien+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD437A701EB1C0EE006CD3BA /* Alien+Animations.swift */; };
 /* End PBXBuildFile section */
 
@@ -149,6 +152,9 @@
 		BD0B998E1EB17DBF0027746F /* SnowEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SnowEmitter.sks; sourceTree = "<group>"; };
 		BD0B99941EB17DC60027746F /* TargetNodeComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetNodeComponent.swift; sourceTree = "<group>"; };
 		BD0B999E1EB18DDD0027746F /* GKEntityExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GKEntityExtension.swift; sourceTree = "<group>"; };
+		BD29FC5D1EB1D98F00D3A4E2 /* GraphNodeComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphNodeComponent.swift; sourceTree = "<group>"; };
+		BD29FC5F1EB1E28E00D3A4E2 /* LevelBScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelBScene.swift; sourceTree = "<group>"; };
+		BD29FC611EB1E31500D3A4E2 /* BeeScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BeeScene.sks; sourceTree = "<group>"; };
 		BD437A701EB1C0EE006CD3BA /* Alien+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alien+Animations.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,6 +232,7 @@
 				BD0B99581EB17D480027746F /* LaserComponent.swift */,
 				BD0B99941EB17DC60027746F /* TargetNodeComponent.swift */,
 				BD0B998B1EB17DBF0027746F /* RenderComponent.swift */,
+				BD29FC5D1EB1D98F00D3A4E2 /* GraphNodeComponent.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -268,6 +275,7 @@
 				BD0B99501EB17D3F0027746F /* IslandScene.sks */,
 				BD0B995A1EB17D480027746F /* LavaScene.sks */,
 				BD0B99591EB17D480027746F /* Lava.sks */,
+				BD29FC611EB1E31500D3A4E2 /* BeeScene.sks */,
 			);
 			name = SKSFiles;
 			sourceTree = "<group>";
@@ -315,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				BD0B99781EB17DB00027746F /* PlatformerBaseScene.swift */,
+				BD29FC5F1EB1E28E00D3A4E2 /* LevelBScene.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -388,6 +397,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD29FC621EB1E31500D3A4E2 /* BeeScene.sks in Resources */,
 				BD0B99681EB17D510027746F /* LevelIScene.sks in Resources */,
 				BD0B99931EB17DBF0027746F /* SnowEmitter.sks in Resources */,
 				BD0B992D1EB17D080027746F /* CastleScene.sks in Resources */,
@@ -414,9 +424,11 @@
 				BD0B99221EB17CFE0027746F /* Background.swift in Sources */,
 				BD0B99671EB17D510027746F /* LevelAEntityManager.swift in Sources */,
 				BD0B99241EB17CFE0027746F /* BaseScene+Pause.swift in Sources */,
+				BD29FC5E1EB1D98F00D3A4E2 /* GraphNodeComponent.swift in Sources */,
 				BD0B995D1EB17D480027746F /* LaserComponent.swift in Sources */,
 				BD0B993F1EB17D2F0027746F /* EnemyAttackState.swift in Sources */,
 				BD0B997F1EB17DB00027746F /* PlatformerLevelSceneActive.swift in Sources */,
+				BD29FC601EB1E28E00D3A4E2 /* LevelBScene.swift in Sources */,
 				BD0B99491EB17D370027746F /* GroundComponent.swift in Sources */,
 				BD0B997C1EB17DB00027746F /* PhysicsContactUtility.swift in Sources */,
 				BD0B99721EB17D790027746F /* NotificationNameExtension.swift in Sources */,

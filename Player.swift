@@ -40,6 +40,8 @@ class Player: GKEntity{
         renderComponent.node = SKSpriteNode(texture: texture, color: .clear, size: texture.size())
         addComponent(renderComponent)
         
+        let graphComponent = GraphNodeComponent(cgPosition: renderComponent.node.position)
+        addComponent(graphComponent)
         
         let nodeNameComponent = NodeNameComponent(nodeName: "PlayerNode")
         addComponent(nodeNameComponent)
