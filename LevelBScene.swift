@@ -14,6 +14,10 @@ class LevelBScene: PlatformerBaseScene{
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
+        
+        if let playerNode = player.component(ofType: RenderComponent.self)?.node{
+            playerNode.position = CGPoint(x: 3750, y: 100)
+        }
     }
     
     
