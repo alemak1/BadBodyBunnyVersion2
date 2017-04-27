@@ -130,6 +130,17 @@ class AlienAttackState: GKState{
         super.didEnter(from: previousState)
         print("Enemy has entered the attack state, setting target node...")
         
+        
+        if let renderNode = alienEntity.component(ofType: RenderComponent.self)?.node{
+            
+            let colorizeAction1 = SKAction.colorize(with: UIColor.red, colorBlendFactor: 0.50, duration: 2.00)
+            let colorizeAction2 = colorizeAction1.reversed()
+            let colorizationSequence = SKAction.sequence([ colorizeAction1, colorizeAction2 ])
+            
+        
+            let attackAnimation = SKAction.repeatForever(colorizationSequence)
+            renderNode.run(attackAnimation, withKey: "attackAnimation")
+        }
     }
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {

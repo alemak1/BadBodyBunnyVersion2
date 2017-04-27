@@ -34,6 +34,11 @@ class OrientationComponent: GKComponent{
     override func update(deltaTime seconds: TimeInterval) {
         super.update(deltaTime: seconds)
         
+        /** For symmetrical entities which don't have orientation, orientation is not set dynamically based on the horizontal velocity of the physics body
+ 
+        **/
+        guard currentOrientation != .None else { return }
+        
         guard let physicsBody = entity?.component(ofType: PhysicsComponent.self)?.physicsBody else { return }
         
         if physicsBody.velocity.dx > 10{

@@ -61,6 +61,14 @@ class AlienActiveState: GKState{
         super.didEnter(from: previousState)
         print("Enemy has entered the active state...")
         
+        
+        if let renderNode = alienEntity.component(ofType: RenderComponent.self)?.node, renderNode.action(forKey: "attackAnimation") != nil{
+            renderNode.removeAction(forKey: "attackAnimation")
+        }
+
+        
+        
+        
         if let alienAnimationComponent = alienEntity.component(ofType: AnimationComponent.self){
             alienAnimationComponent.requestedAnimation = .moving
         }

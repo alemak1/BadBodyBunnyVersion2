@@ -78,7 +78,7 @@ class AlienInactiveState: GKState{
     override func update(deltaTime seconds: TimeInterval) {
         super.update(deltaTime: seconds)
         
-        frameCount += inactiveInterval
+        frameCount += seconds
         
         if frameCount > inactiveInterval{
             stateMachine?.enter(AlienActiveState.self)
@@ -92,8 +92,17 @@ class AlienInactiveState: GKState{
         
         frameCount = 0.00
         
-        if let alienAnimationComponent = alienEntity.component(ofType: AnimationComponent.self){
+        if let renderNode = alienEntity.component(ofType: RenderComponent.self)?.node, renderNode.action(forKey: "attackAnimation") != nil{
+            renderNode.removeAction(forKey: "attackAnimation")
             
+        }
+        
+        
+    
+        
+        if let alienAnimationComponent = alienEntity.component(ofType: AnimationComponent.self), let alienRenderComponent = alienEntity.component(ofType: RenderComponent.self){
+            
+            alienRenderComponent.resetToOriginalPosition()
             alienAnimationComponent.requestedAnimation = .inactive
             
         }

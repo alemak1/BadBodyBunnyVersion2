@@ -79,6 +79,7 @@ class Alien: Enemy{
             AlienActiveState(alienEntity: self)
             ])
         addComponent(intelligenceComponent)
+        intelligenceComponent.stateMachine?.enter(AlienInactiveState.self)
         
     }
     

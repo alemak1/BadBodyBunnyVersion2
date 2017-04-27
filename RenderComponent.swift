@@ -26,6 +26,7 @@ class RenderComponent: GKComponent{
     var autoRepositionInterval: TimeInterval = 5.00
     
     var position: CGPoint = .zero
+    var originalPosition: CGPoint = .zero
     
     override init() {
         super.init()
@@ -36,11 +37,14 @@ class RenderComponent: GKComponent{
         self.init()
         self.node = spriteNode
         self.position = node.position
+        self.originalPosition = node.position
     }
     
     convenience init(position: CGPoint, autoRemoveEnabled: Bool = false) {
         self.init()
         self.position = position
+        self.originalPosition = position
+
         self.autoRemoveEnabled = autoRemoveEnabled
     }
     
@@ -48,6 +52,7 @@ class RenderComponent: GKComponent{
     convenience init(position: CGPoint, autoRepositioningEnabled: Bool = false) {
         self.init()
         self.position = position
+        self.originalPosition = position
         self.autoRepositioningEnabled = autoRepositioningEnabled
 
     }
@@ -119,5 +124,10 @@ class RenderComponent: GKComponent{
         let xPos = RandomGenerator.getRandomXPos(adjustmentFactor: 0.95)
         let yPos = Int(ScreenSizeConstants.HalfScreenHeight) + 100
         node.position = CGPoint(x: xPos, y: yPos)
+    }
+    
+    
+    func resetToOriginalPosition(){
+        node.position = originalPosition
     }
 }

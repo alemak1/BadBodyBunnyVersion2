@@ -22,6 +22,12 @@ class HealthComponent: GKComponent{
     var frameCount: TimeInterval = 0.00
     var lastUpdateTime: TimeInterval = 0.00
     
+    
+    lazy var invulnerabilityAnimation = SKAction.repeatForever(SKAction.sequence([
+        SKAction.fadeAlpha(to: 0.40, duration: 1.0),
+        SKAction.fadeAlpha(to: 0.80, duration: 1.0)
+        ]))
+    
     init(startingHealth: Int){
         self.startingHealth = startingHealth
         self.currentHealth = startingHealth
@@ -41,14 +47,20 @@ class HealthComponent: GKComponent{
  
     **/
     func playerTakesDamage(notification: Notification){
+        
         if isInvulnerable {
-           // print("No damage: player is temporarily invulnerable")
+           print("No damage: player is temporarily invulnerable")
             return }
         
         print("Player health decreasing by -1")
         currentHealth -= 1
         
         isInvulnerable = true
+        
+        if let playerRenderNode = entity?.component(ofType: RenderComponent.self)?.node{
+            playerRenderNode.run(invulnerabilityAnimation, withKey: "invulnerabilityAnimation")
+        }
+        
     }
     
     override func update(deltaTime seconds: TimeInterval) {
@@ -60,6 +72,10 @@ class HealthComponent: GKComponent{
             frameCount += seconds
             //print("Invulnerability frameCount is \(frameCount)")
             if(frameCount > invulnerabilityInterval){
+                
+                if let playerRenderNode = entity?.component(ofType: RenderComponent.self)?.node{
+                    playerRenderNode.removeAction(forKey: "invulnerabilityAnimation")
+                }
                 isInvulnerable = false
                 frameCount = 0
             }

@@ -20,7 +20,6 @@ class IntelligenceComponent: GKComponent{
         stateMachine = GKStateMachine(states: states)
         super.init()
         
-        stateMachine?.enter(EnemyActiveState)
     }
     
     required init?(coder aDecoder: NSCoder) {
