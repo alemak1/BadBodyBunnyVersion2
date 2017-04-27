@@ -13,6 +13,15 @@ import CoreMotion
 
 class LandscapeMotionResponderComponent: MotionResponderComponent{
     
+    override init(motionManager: CMMotionManager) {
+        super.init(motionManager: motionManager)
+        
+        registerForNotifications()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func update(deltaTime seconds: TimeInterval) {
         super.update(deltaTime: seconds)
@@ -85,6 +94,10 @@ class LandscapeMotionResponderComponentX: LandscapeMotionResponderComponent{
     
     override func update(deltaTime seconds: TimeInterval) {
         super.update(deltaTime: seconds)
+        
+        if playerIsContactingLadder{
+            setAppliedForceDeltaY()
+        }
         
         setAppliedForceDeltaX()
         applyPhysicsBodyForceFromRotationInput()

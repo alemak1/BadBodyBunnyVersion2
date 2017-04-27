@@ -34,6 +34,9 @@ class MotionResponderComponent: GKComponent{
     var adjustmentCoefficientY: Double = 500.00
     var adjustmentCoefficientX: Double = 500.00
     
+    
+    var playerIsContactingLadder: Bool = false
+    
     init(motionManager: CMMotionManager){
         super.init()
         
@@ -57,6 +60,9 @@ class MotionResponderComponent: GKComponent{
         NotificationCenter.default.addObserver(self, selector: #selector(MotionResponderComponent.resetAdjustmentCoefficientForIceEffect(notification:)), name: Notification.Name.PlayerStartedContactWithIce, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(MotionResponderComponent.resetAdjustmentCoefficientToDefault(notification:)), name: Notification.Name.PlayerEndedContactWithIce, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(MotionResponderComponent.toggleOnPlayerContactWithLadder(notification:)), name: Notification.Name.PlayerStartedContactWithLadder, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MotionResponderComponent.toggleOffPlayerContactWithLadder(notification:)), name: Notification.Name.PlayerEndedContactWithLadder, object: nil)
     }
     
     
@@ -69,8 +75,19 @@ class MotionResponderComponent: GKComponent{
         
     }
     
+    func toggleOnPlayerContactWithLadder(notification: Notification){
+        print("Notification received: contact with ladder has started...")
+        playerIsContactingLadder = true
+    }
+    
+    
+    func toggleOffPlayerContactWithLadder(notification: Notification){
+        print("Notification received: contact with ladder has ended...")
+        playerIsContactingLadder = false
+    }
     
     deinit {
+
         NotificationCenter.default.removeObserver(self)
     }
     

@@ -62,30 +62,31 @@ extension CollisionConfiguration: OptionSet{
     static let Collectible = CollisionConfiguration(rawValue: 1 << 4)           //16
     static let NonCollidingEnemy = CollisionConfiguration(rawValue: 1 << 5)     //32
     static let Portal = CollisionConfiguration(rawValue: 1 << 6)                //64
-    static let Island = CollisionConfiguration(rawValue: 1 << 7)                //128
+    static let Other = CollisionConfiguration(rawValue: UInt32(128))            //128 // 1 << 7
     
     static let definedCollision: [CollisionConfiguration:[CollisionConfiguration]] = [
         CollisionConfiguration.Player :
-            [CollisionConfiguration.Enemy,                                    CollisionConfiguration.Barrier, CollisionConfiguration.Island],
+            [CollisionConfiguration.Enemy,                                    CollisionConfiguration.Barrier],
         
         CollisionConfiguration.Enemy :
-            [CollisionConfiguration.Player, CollisionConfiguration.Barrier, CollisionConfiguration.Island],
+            [CollisionConfiguration.Player, CollisionConfiguration.Barrier],
         CollisionConfiguration.Barrier :
             [CollisionConfiguration.Player, CollisionConfiguration.Enemy, CollisionConfiguration.Letter],
+        CollisionConfiguration.Other : [CollisionConfiguration.NoCategory],
         
         CollisionConfiguration.NonCollidingEnemy : [CollisionConfiguration.NoCategory],
-        CollisionConfiguration.Letter : [CollisionConfiguration.Barrier, CollisionConfiguration.Island]
+        CollisionConfiguration.Letter : [CollisionConfiguration.Barrier, CollisionConfiguration.Other]
     ]
     
     static let definedContacts: [CollisionConfiguration:[CollisionConfiguration]] = [
         CollisionConfiguration.Player :
-            [CollisionConfiguration.Portal, CollisionConfiguration.Collectible, CollisionConfiguration.Letter, CollisionConfiguration.Enemy, CollisionConfiguration.NonCollidingEnemy, CollisionConfiguration.Barrier],
+            [CollisionConfiguration.Portal, CollisionConfiguration.Collectible, CollisionConfiguration.Letter, CollisionConfiguration.Enemy, CollisionConfiguration.NonCollidingEnemy, CollisionConfiguration.Barrier, CollisionConfiguration.Other],
         CollisionConfiguration.Barrier : [CollisionConfiguration.Player],
         CollisionConfiguration.NonCollidingEnemy:
             [CollisionConfiguration.Player],
         CollisionConfiguration.Letter : [ CollisionConfiguration.Player, CollisionConfiguration.Barrier],
         CollisionConfiguration.Portal :      [CollisionConfiguration.Player],
-        CollisionConfiguration.Island : [CollisionConfiguration.NoCategory]
+        CollisionConfiguration.Other : [CollisionConfiguration.Player]
     ]
     
 }
