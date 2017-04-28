@@ -20,7 +20,7 @@ class OscillatorComponent: GKComponent{
     var rightWardForce: CGFloat = 0.00
     var currentlyAppliedForce: CGFloat = 0.00
     
-    var physicsBody: SKPhysicsBody?
+    var physicsBody: SKPhysicsBody
     
     convenience init(oscillationInterval: TimeInterval, leftWardForce: CGFloat, rightWardForce: CGFloat) {
         self.init()
@@ -29,7 +29,9 @@ class OscillatorComponent: GKComponent{
         self.rightWardForce = rightWardForce
         self.currentlyAppliedForce = leftWardForce
     }
+    
     override init() {
+        self.physicsBody = SKPhysicsBody()
         super.init()
     }
     
@@ -52,13 +54,13 @@ class OscillatorComponent: GKComponent{
         print("About to apply oscillation force..")
         
         let appliedForceVector = CGVector(dx: currentlyAppliedForce, dy: 0.00)
-        physicsBody?.applyForce(appliedForceVector)
+        physicsBody.applyForce(appliedForceVector)
         
         oscillationFrameCount += seconds
         
         if oscillationFrameCount > oscillationInterval{
             
-            currentlyAppliedForce = (physicsBody?.velocity.dx)! > CGFloat(0.00) ? leftWardForce : rightWardForce
+            currentlyAppliedForce =  physicsBody.velocity.dx > CGFloat(0.00) ? leftWardForce : rightWardForce
             
             oscillationFrameCount = 0.00
         }

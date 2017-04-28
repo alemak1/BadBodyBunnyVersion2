@@ -25,6 +25,27 @@ extension PlatformerBaseScene{
     
         let otherBody = (contact.bodyA.categoryBitMask & CollisionConfiguration.Player.categoryMask > 0) ? contact.bodyB : contact.bodyA
     
+        let enemyBody = (contact.bodyA.categoryBitMask & CollisionConfiguration.Enemy.categoryMask > 0) ? contact.bodyA : contact.bodyB
+        
+        let nonEnemyBody = (contact.bodyA.categoryBitMask & CollisionConfiguration.Enemy.categoryMask > 0) ? contact.bodyB : contact.bodyA
+        
+        
+        /** Contact logic for enemies
+ 
+        **/
+        switch nonEnemyBody.categoryBitMask {
+            case CollisionConfiguration.Barrier.categoryMask:
+                print("No contact logic implemented between enemy and barrier")
+                break
+            default:
+                print("No contact logic implemented")
+                break
+        }
+        
+        
+        /** Contact logic for player
+ 
+        **/
         switch(otherBody.categoryBitMask){
             case CollisionConfiguration.Barrier.categoryMask:
                 //  NotificationCenter.default.post(name: Notification.Name.PlayerStartedBarrierContactNotification, object: nil, userInfo: nil)

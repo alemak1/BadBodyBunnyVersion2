@@ -36,6 +36,7 @@ extension PlatformerBaseScene{
          
          **/
         
+        initializePlaceholderGraph(rootNode: rootNode)
         initializeObstacleGraph(rootNode: rootNode)
         
         
@@ -60,13 +61,36 @@ extension PlatformerBaseScene{
     }
     
     
+    func initializePlaceholderGraph(rootNode: SKNode){
+        var graphNodes = [GKGraphNode2D]()
+        
+        print("Initializing placeholder graph...")
+        
+        for node in rootNode.children{
+            if node.name == "GraphNode"{
+                let positionVal = node.userData?.value(forKey: "position") as! NSValue
+                let graphNodePos = positionVal.cgPointValue
+                
+                let vfPosition = graphNodePos.getVectorFloat2()
+                let graphNode = GKGraphNode2D(point: vfPosition)
+                graphNodes.append(graphNode)
+                print("Added another graphNode...")
+            }
+            
+        }
+        
+        placeholderGraph = GKMeshGraph(nodes: graphNodes)
+        print("placeholder graph initialized")
+
+    }
+    
     func initializeObstacleGraph(rootNode: SKNode){
         
         var obstacleNodes = [SKNode]()
         
         for node in rootNode.children{
             
-            if node.name == "Island"{
+            if let node = node as? SKSpriteNode, node.name == "Island"{
                 obstacleNodes.append(node)
                 
             }
@@ -75,6 +99,7 @@ extension PlatformerBaseScene{
         let obstacleGraphNodes = SKNode.obstacles(fromNodeBounds: obstacleNodes)
         
         obstacleGraph = GKObstacleGraph(obstacles: obstacleGraphNodes, bufferRadius: 1.00)
+        
         
         
     }

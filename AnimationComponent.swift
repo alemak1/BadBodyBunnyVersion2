@@ -13,13 +13,15 @@ import GameplayKit
 
 enum AnimationState: String{
     
+
     case moving = "moving"
     case jump = "jump"
     case attack = "attack"
     case hit = "hit"
     case dead = "dead"
     case inactive = "inactive"
-    
+    case followingPathFromLeft = "followingPathFromLeft"
+    case followingPathFromRight = "followingPathFromRight"
     
 }
 
@@ -36,14 +38,21 @@ class Animation{
     
     let orientation: Orientation
     
+    //The general SKAction associated with this animation (can be texture-based or non-textured based, or a combination of both) 
+    
+    let mainAction: SKAction?
+    
     //The optional name or key for this animation
     let animationName: String?
     
-    init(animationState: AnimationState, orientation: Orientation, animationName: String?){
+    init(animationState: AnimationState, orientation: Orientation, animationName: String?, mainAction: SKAction?){
         self.animationState = animationState
         self.orientation = orientation
         self.animationName = animationName
+        self.mainAction = mainAction
     }
+    
+    
 }
 
 
@@ -70,7 +79,7 @@ class TextureAnimation: Animation{
         self.timePerFrame = timePerFrame
         self.repeatTexturesForever = repeatTexturesForever
         
-        super.init(animationState: animationState, orientation: orientation, animationName: animationName)
+        super.init(animationState: animationState, orientation: orientation, animationName: animationName, mainAction: nil)
         
        
     }
@@ -93,7 +102,7 @@ class NonTextureAnimation: Animation{
         self.nonTextureAction = nonTextureAction
         self.repeatNonTextureActionForever = repeatNonTextureActionForever
         
-        super.init(animationState: animationState, orientation: orientation, animationName: animationName)
+        super.init(animationState: animationState, orientation: orientation, animationName: animationName, mainAction: nil)
         
        
     }

@@ -161,7 +161,7 @@ class AlienAttackState: GKState{
                         let graphNode = graphNode as! GKGraphNode2D
                         
                         let nextPoint = graphNode.getCGPointFromGraphNodeCoordinates()
-                        let moveToNextPointAction = SKAction.move(to: nextPoint, duration: 4.00)
+                        let moveToNextPointAction = SKAction.move(to: nextPoint, duration: 2.00)
                         
                         print("Executing move to next point in path..")
                         node.run(moveToNextPointAction)

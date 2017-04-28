@@ -94,7 +94,16 @@
 		BD2CDB861EB2EDC300AF2E50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD2CDB841EB2EDC300AF2E50 /* Assets.xcassets */; };
 		BD2CDB881EB2EEAF00AF2E50 /* starrySky.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD2CDB871EB2EEAF00AF2E50 /* starrySky.sks */; };
 		BD2CDB8A1EB2F5D900AF2E50 /* LevelUScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2CDB891EB2F5D900AF2E50 /* LevelUScene.swift */; };
+		BD3682C41EB3119D0061D9C5 /* LevelAScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3682C31EB3119D0061D9C5 /* LevelAScene.swift */; };
+		BD3682C61EB311AC0061D9C5 /* LevelCScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3682C51EB311AC0061D9C5 /* LevelCScene.swift */; };
+		BD3682C81EB311B70061D9C5 /* LevelDScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3682C71EB311B70061D9C5 /* LevelDScene.swift */; };
+		BD3682CA1EB311C40061D9C5 /* LevelEScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3682C91EB311C40061D9C5 /* LevelEScene.swift */; };
+		BD3682CC1EB311D70061D9C5 /* LevelFScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3682CB1EB311D70061D9C5 /* LevelFScene.swift */; };
+		BD3682CE1EB3167A0061D9C5 /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3682CD1EB3167A0061D9C5 /* Bee.swift */; };
+		BD3682D01EB31A780061D9C5 /* Fly.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3682CF1EB31A780061D9C5 /* Fly.swift */; };
+		BD3682D21EB3273A0061D9C5 /* BasicAnimationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3682D11EB3273A0061D9C5 /* BasicAnimationComponent.swift */; };
 		BD437A711EB1C0EE006CD3BA /* Alien+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD437A701EB1C0EE006CD3BA /* Alien+Animations.swift */; };
+		BD4E13431EB33A4800520B59 /* RandomPathFinderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E13421EB33A4800520B59 /* RandomPathFinderComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -187,7 +196,16 @@
 		BD2CDB841EB2EDC300AF2E50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD2CDB871EB2EEAF00AF2E50 /* starrySky.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = starrySky.sks; sourceTree = "<group>"; };
 		BD2CDB891EB2F5D900AF2E50 /* LevelUScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelUScene.swift; sourceTree = "<group>"; };
+		BD3682C31EB3119D0061D9C5 /* LevelAScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelAScene.swift; sourceTree = "<group>"; };
+		BD3682C51EB311AC0061D9C5 /* LevelCScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelCScene.swift; sourceTree = "<group>"; };
+		BD3682C71EB311B70061D9C5 /* LevelDScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDScene.swift; sourceTree = "<group>"; };
+		BD3682C91EB311C40061D9C5 /* LevelEScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelEScene.swift; sourceTree = "<group>"; };
+		BD3682CB1EB311D70061D9C5 /* LevelFScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelFScene.swift; sourceTree = "<group>"; };
+		BD3682CD1EB3167A0061D9C5 /* Bee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
+		BD3682CF1EB31A780061D9C5 /* Fly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fly.swift; sourceTree = "<group>"; };
+		BD3682D11EB3273A0061D9C5 /* BasicAnimationComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAnimationComponent.swift; sourceTree = "<group>"; };
 		BD437A701EB1C0EE006CD3BA /* Alien+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alien+Animations.swift"; sourceTree = "<group>"; };
+		BD4E13421EB33A4800520B59 /* RandomPathFinderComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomPathFinderComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +263,7 @@
 		BD0B99961EB17DD90027746F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BD4E13421EB33A4800520B59 /* RandomPathFinderComponent.swift */,
 				BD0B99451EB17D370027746F /* HealthComponent.swift */,
 				BD0B99661EB17D510027746F /* MotionResponderComponent.swift */,
 				BD0B99181EB17CFE0027746F /* AnimationComponent.swift */,
@@ -265,6 +284,7 @@
 				BD0B99941EB17DC60027746F /* TargetNodeComponent.swift */,
 				BD0B998B1EB17DBF0027746F /* RenderComponent.swift */,
 				BD29FC5D1EB1D98F00D3A4E2 /* GraphNodeComponent.swift */,
+				BD3682D11EB3273A0061D9C5 /* BasicAnimationComponent.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -337,6 +357,8 @@
 				BD0B99831EB17DB80027746F /* Player.swift */,
 				BD0B993C1EB17D2F0027746F /* EnemySun.swift */,
 				BD0B994F1EB17D3F0027746F /* Island.swift */,
+				BD3682CD1EB3167A0061D9C5 /* Bee.swift */,
+				BD3682CF1EB31A780061D9C5 /* Fly.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -365,10 +387,15 @@
 			children = (
 				BD0B99781EB17DB00027746F /* PlatformerBaseScene.swift */,
 				BD2B46C81EB21D52008D88B8 /* PlatformerBaseScene+SKSLoadingFunctionality.swift */,
-				BD29FC5F1EB1E28E00D3A4E2 /* LevelBScene.swift */,
-				BD2B46C61EB21B3B008D88B8 /* LevelTScene.swift */,
 				BD2B46CC1EB2373B008D88B8 /* PlatformerBaseScene+SKPhysicsContactDelegate.swift */,
 				BD2CDB891EB2F5D900AF2E50 /* LevelUScene.swift */,
+				BD3682C31EB3119D0061D9C5 /* LevelAScene.swift */,
+				BD29FC5F1EB1E28E00D3A4E2 /* LevelBScene.swift */,
+				BD3682C51EB311AC0061D9C5 /* LevelCScene.swift */,
+				BD3682C71EB311B70061D9C5 /* LevelDScene.swift */,
+				BD3682C91EB311C40061D9C5 /* LevelEScene.swift */,
+				BD2B46C61EB21B3B008D88B8 /* LevelTScene.swift */,
+				BD3682CB1EB311D70061D9C5 /* LevelFScene.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -488,29 +515,36 @@
 			files = (
 				BD0B99361EB17D120027746F /* CoreMotionHelper.swift in Sources */,
 				BD0B99691EB17D510027746F /* MainMotionManager.swift in Sources */,
+				BD3682CE1EB3167A0061D9C5 /* Bee.swift in Sources */,
 				BD0B99211EB17CFE0027746F /* AppDelegate.swift in Sources */,
 				BD0B99221EB17CFE0027746F /* Background.swift in Sources */,
+				BD3682C61EB311AC0061D9C5 /* LevelCScene.swift in Sources */,
 				BD0B99671EB17D510027746F /* LevelAEntityManager.swift in Sources */,
 				BD0B99241EB17CFE0027746F /* BaseScene+Pause.swift in Sources */,
 				BD2B46C91EB21D52008D88B8 /* PlatformerBaseScene+SKSLoadingFunctionality.swift in Sources */,
 				BD29FC5E1EB1D98F00D3A4E2 /* GraphNodeComponent.swift in Sources */,
+				BD3682CA1EB311C40061D9C5 /* LevelEScene.swift in Sources */,
 				BD0B995D1EB17D480027746F /* LaserComponent.swift in Sources */,
 				BD0B993F1EB17D2F0027746F /* EnemyAttackState.swift in Sources */,
 				BD0B997F1EB17DB00027746F /* PlatformerLevelSceneActive.swift in Sources */,
 				BD29FC601EB1E28E00D3A4E2 /* LevelBScene.swift in Sources */,
 				BD0B99491EB17D370027746F /* GroundComponent.swift in Sources */,
+				BD3682C81EB311B70061D9C5 /* LevelDScene.swift in Sources */,
 				BD0B997C1EB17DB00027746F /* PhysicsContactUtility.swift in Sources */,
 				BD0B99721EB17D790027746F /* NotificationNameExtension.swift in Sources */,
 				BD0B994D1EB17D370027746F /* IntelligenceComponent.swift in Sources */,
 				BD0B996B1EB17D510027746F /* MotionResponderComponent.swift in Sources */,
+				BD3682D21EB3273A0061D9C5 /* BasicAnimationComponent.swift in Sources */,
 				BD0B99741EB17D790027746F /* OscillatorComponent.swift in Sources */,
 				BD0B99411EB17D2F0027746F /* EnemySun.swift in Sources */,
 				BD0B998F1EB17DBF0027746F /* RandomGenerator.swift in Sources */,
+				BD4E13431EB33A4800520B59 /* RandomPathFinderComponent.swift in Sources */,
 				BD0B99561EB17D3F0027746F /* JumpComponent.swift in Sources */,
 				BD2B46C71EB21B3B008D88B8 /* LevelTScene.swift in Sources */,
 				BD0B99871EB17DB80027746F /* PlatformerLevelSceneSuccessState.swift in Sources */,
 				BD0B99531EB17D3F0027746F /* InvisibilityComponent.swift in Sources */,
 				BD0B99921EB17DBF0027746F /* SKPhysicsContactExtension.swift in Sources */,
+				BD3682C41EB3119D0061D9C5 /* LevelAScene.swift in Sources */,
 				BD0B997D1EB17DB00027746F /* PlatformerBaseScene.swift in Sources */,
 				BD0B999F1EB18DDD0027746F /* GKEntityExtension.swift in Sources */,
 				BD0B99231EB17CFE0027746F /* BaseScene.swift in Sources */,
@@ -534,7 +568,9 @@
 				BD0B992B1EB17D080027746F /* Blade.swift in Sources */,
 				BD437A711EB1C0EE006CD3BA /* Alien+Animations.swift in Sources */,
 				BD0B99891EB17DB80027746F /* PortraitMotionResponderComponent.swift in Sources */,
+				BD3682CC1EB311D70061D9C5 /* LevelFScene.swift in Sources */,
 				BD0B99601EB17D480027746F /* Letter.swift in Sources */,
+				BD3682D01EB31A780061D9C5 /* Fly.swift in Sources */,
 				BD2CDB8A1EB2F5D900AF2E50 /* LevelUScene.swift in Sources */,
 				BD0B99711EB17D790027746F /* NodeNameComponent.swift in Sources */,
 				BD0B99851EB17DB80027746F /* PlatformerLevelSceneFailState.swift in Sources */,
