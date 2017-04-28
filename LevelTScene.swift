@@ -16,7 +16,8 @@ class LevelTScene: PlatformerBaseScene{
         super.didMove(to: view)
         
         if let playerNode = player.component(ofType: RenderComponent.self)?.node{
-            playerNode.position = CGPoint(x: -336, y: 646)
+           // playerNode.position = CGPoint(x: -336, y: 646)
+            playerNode.position = CGPoint(x: 3700, y: 80)
         }
     }
     
