@@ -91,6 +91,9 @@
 		BD2B46C91EB21D52008D88B8 /* PlatformerBaseScene+SKSLoadingFunctionality.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B46C81EB21D52008D88B8 /* PlatformerBaseScene+SKSLoadingFunctionality.swift */; };
 		BD2B46CB1EB227A3008D88B8 /* CloudMovement.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD2B46CA1EB227A3008D88B8 /* CloudMovement.sks */; };
 		BD2B46CD1EB2373B008D88B8 /* PlatformerBaseScene+SKPhysicsContactDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B46CC1EB2373B008D88B8 /* PlatformerBaseScene+SKPhysicsContactDelegate.swift */; };
+		BD2CDB861EB2EDC300AF2E50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD2CDB841EB2EDC300AF2E50 /* Assets.xcassets */; };
+		BD2CDB881EB2EEAF00AF2E50 /* starrySky.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD2CDB871EB2EEAF00AF2E50 /* starrySky.sks */; };
+		BD2CDB8A1EB2F5D900AF2E50 /* LevelUScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2CDB891EB2F5D900AF2E50 /* LevelUScene.swift */; };
 		BD437A711EB1C0EE006CD3BA /* Alien+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD437A701EB1C0EE006CD3BA /* Alien+Animations.swift */; };
 /* End PBXBuildFile section */
 
@@ -181,6 +184,9 @@
 		BD2B46C81EB21D52008D88B8 /* PlatformerBaseScene+SKSLoadingFunctionality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlatformerBaseScene+SKSLoadingFunctionality.swift"; sourceTree = "<group>"; };
 		BD2B46CA1EB227A3008D88B8 /* CloudMovement.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CloudMovement.sks; sourceTree = "<group>"; };
 		BD2B46CC1EB2373B008D88B8 /* PlatformerBaseScene+SKPhysicsContactDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PlatformerBaseScene+SKPhysicsContactDelegate.swift"; sourceTree = "<group>"; };
+		BD2CDB841EB2EDC300AF2E50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BD2CDB871EB2EEAF00AF2E50 /* starrySky.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = starrySky.sks; sourceTree = "<group>"; };
+		BD2CDB891EB2F5D900AF2E50 /* LevelUScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelUScene.swift; sourceTree = "<group>"; };
 		BD437A701EB1C0EE006CD3BA /* Alien+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alien+Animations.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -295,12 +301,11 @@
 		BD0B99991EB17E390027746F /* SKSFiles */ = {
 			isa = PBXGroup;
 			children = (
+				BD2CDB821EB2ED8E00AF2E50 /* ParticleEmitters */,
 				BD0B99281EB17D080027746F /* CastleScene.sks */,
-				BD0B998E1EB17DBF0027746F /* SnowEmitter.sks */,
 				BD0B99631EB17D510027746F /* LevelIScene.sks */,
 				BD0B99501EB17D3F0027746F /* IslandScene.sks */,
 				BD0B995A1EB17D480027746F /* LavaScene.sks */,
-				BD0B99591EB17D480027746F /* Lava.sks */,
 				BD29FC611EB1E31500D3A4E2 /* BeeScene.sks */,
 				BD2B46B41EB20FFD008D88B8 /* TreeScene.sks */,
 				BD2B46B61EB21007008D88B8 /* CloudScene.sks */,
@@ -363,8 +368,20 @@
 				BD29FC5F1EB1E28E00D3A4E2 /* LevelBScene.swift */,
 				BD2B46C61EB21B3B008D88B8 /* LevelTScene.swift */,
 				BD2B46CC1EB2373B008D88B8 /* PlatformerBaseScene+SKPhysicsContactDelegate.swift */,
+				BD2CDB891EB2F5D900AF2E50 /* LevelUScene.swift */,
 			);
 			name = Scenes;
+			sourceTree = "<group>";
+		};
+		BD2CDB821EB2ED8E00AF2E50 /* ParticleEmitters */ = {
+			isa = PBXGroup;
+			children = (
+				BD0B998E1EB17DBF0027746F /* SnowEmitter.sks */,
+				BD0B99591EB17D480027746F /* Lava.sks */,
+				BD2CDB841EB2EDC300AF2E50 /* Assets.xcassets */,
+				BD2CDB871EB2EEAF00AF2E50 /* starrySky.sks */,
+			);
+			name = ParticleEmitters;
 			sourceTree = "<group>";
 		};
 		BD437A6F1EB1C0DE006CD3BA /* Alien */ = {
@@ -440,6 +457,8 @@
 				BD0B99681EB17D510027746F /* LevelIScene.sks in Resources */,
 				BD0B99931EB17DBF0027746F /* SnowEmitter.sks in Resources */,
 				BD2B46CB1EB227A3008D88B8 /* CloudMovement.sks in Resources */,
+				BD2CDB861EB2EDC300AF2E50 /* Assets.xcassets in Resources */,
+				BD2CDB881EB2EEAF00AF2E50 /* starrySky.sks in Resources */,
 				BD2B46C31EB212A8008D88B8 /* ZooScene.sks in Resources */,
 				BD0B992D1EB17D080027746F /* CastleScene.sks in Resources */,
 				BD2B46B91EB2101C008D88B8 /* AlienScene.sks in Resources */,
@@ -516,6 +535,7 @@
 				BD437A711EB1C0EE006CD3BA /* Alien+Animations.swift in Sources */,
 				BD0B99891EB17DB80027746F /* PortraitMotionResponderComponent.swift in Sources */,
 				BD0B99601EB17D480027746F /* Letter.swift in Sources */,
+				BD2CDB8A1EB2F5D900AF2E50 /* LevelUScene.swift in Sources */,
 				BD0B99711EB17D790027746F /* NodeNameComponent.swift in Sources */,
 				BD0B99851EB17DB80027746F /* PlatformerLevelSceneFailState.swift in Sources */,
 				BD0B994A1EB17D370027746F /* HealthComponent.swift in Sources */,
