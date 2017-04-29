@@ -14,7 +14,7 @@ class Fly: GKEntity{
     
     //MARK: Initializers
     
-    init(position: CGPoint, scalingFactor: CGFloat, meshGraph: GKMeshGraph<GKGraphNode2D>?) {
+    init(position: CGPoint, scalingFactor: CGFloat) {
         
         super.init()
         
@@ -24,9 +24,6 @@ class Fly: GKEntity{
         let renderComponent = RenderComponent(position: position, autoRemoveEnabled: false)
         renderComponent.node = SKSpriteNode(texture: texture, color: .clear, size: texture.size())
         addComponent(renderComponent)
-        
-        let graphComponent = GraphNodeComponent(cgPosition: renderComponent.node.position)
-        addComponent(graphComponent)
         
         let nodeNameComponent = NodeNameComponent(nodeName: "PlayerNode")
         addComponent(nodeNameComponent)
@@ -43,22 +40,15 @@ class Fly: GKEntity{
         let physicsComponent = PhysicsComponent(physicsBody: physicsBody, collisionConfiguration: CollisionConfiguration.Enemy)
         addComponent(physicsComponent)
         
-        // addMotionResponderComponent()
         
-        /**
-        let oscillatorComponent = OscillatorComponent(oscillationInterval: 4.00, leftWardForce: -50.00, rightWardForce: 50.00)
-        addComponent(oscillatorComponent)
-        **/
-        
+       // let randomImpulseComponent = RandomImpulseComponent(minXImpulse: 30, maxXImpulse: 60, minYImpulse: 30, maxYImpulse: 60, impulseInterval: 5.00)
+       // addComponent(randomImpulseComponent)
         
         let orientationComponent = OrientationComponent(currentOrientation: .None)
         addComponent(orientationComponent)
         
 
-        if let meshGraph = meshGraph{
-            let randomPathFinderComponent = RandomPathFinderComponent(meshGraph: meshGraph)
-            addComponent(randomPathFinderComponent)
-        }
+       
         //The fly is scaled down after the physics body is added so that the physics body scaled down along with the node texture
         
         renderComponent.node.xScale *= scalingFactor

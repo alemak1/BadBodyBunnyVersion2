@@ -18,7 +18,6 @@ extension PlatformerBaseScene{
          **/
         guard let rootNode = SKScene(fileNamed: skSceneFileName)?.childNode(withName: "RootNode") else {
             fatalError("Error: the SKS file must have a root node in order to be loaded into the present scene")
-            return
         }
         
         
@@ -65,7 +64,7 @@ extension PlatformerBaseScene{
         var graphNodes = [GKGraphNode2D]()
         
         print("Initializing placeholder graph...")
-        
+    
         for node in rootNode.children{
             if node.name == "GraphNode"{
                 let positionVal = node.userData?.value(forKey: "position") as! NSValue
@@ -98,7 +97,8 @@ extension PlatformerBaseScene{
         
         let obstacleGraphNodes = SKNode.obstacles(fromNodeBounds: obstacleNodes)
         
-        obstacleGraph = GKObstacleGraph(obstacles: obstacleGraphNodes, bufferRadius: 1.00)
+    
+        obstacleGraph = GKObstacleGraph(obstacles: obstacleGraphNodes, bufferRadius: 20.00)
         
         
         
@@ -138,7 +138,7 @@ extension PlatformerBaseScene{
                 Alien.setAlienColor(alienColor: &alienColor, nodeName: nodeName)
                 
                 
-                let alienEntity = Alien(alienColor: alienColor, position: alienPos, nodeName: "alien\(alienPos)", targetNode: playerNode, minimumProximityDistance: 400.00)
+              //  let alienEntity = Alien(alienColor: alienColor, position: alienPos, nodeName: "alien\(alienPos)", targetNode: playerNode, minimumProximityDistance: 400.00)
  
                 
                 guard let playerAgent = player.component(ofType: AgentComponent.self)?.entityAgent else {
@@ -151,7 +151,7 @@ extension PlatformerBaseScene{
                 let alienEntity = Alien(alienColor: alienColor, position: alienPos, nodeName: "alien\(alienPos)", targetAgent: playerAgent, maxPredictionTime: 2.00, maxSpeed: 1.00, maxAcceleration: 1.00)
                 **/
                 
-                entityManager.addToWorld(alienEntity)
+               // entityManager.addToWorld(alienEntity)
                 
             }
         }

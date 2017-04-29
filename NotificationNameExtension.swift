@@ -27,6 +27,7 @@ extension Notification.Name{
     
     static let PlayerStartedContactWithLadder = Notification.Name(rawValue: "playerStartedContactWithLadderNotification")
     static let PlayerEndedContactWithLadder = Notification.Name(rawValue: "playerEndedContactWithLadderNotification")
+  
     /**
     static let PlayerEnteredEnemyProximityNotification = Notification.Name(rawValue: "playerEnteredEnemyProximityNotification")
     

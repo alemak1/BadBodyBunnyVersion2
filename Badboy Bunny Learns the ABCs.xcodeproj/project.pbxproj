@@ -94,6 +94,8 @@
 		BD2CDB861EB2EDC300AF2E50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD2CDB841EB2EDC300AF2E50 /* Assets.xcassets */; };
 		BD2CDB881EB2EEAF00AF2E50 /* starrySky.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD2CDB871EB2EEAF00AF2E50 /* starrySky.sks */; };
 		BD2CDB8A1EB2F5D900AF2E50 /* LevelUScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2CDB891EB2F5D900AF2E50 /* LevelUScene.swift */; };
+		BD2D65B11EB44ABA0062BEFE /* CastleScene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD2D65B01EB44ABA0062BEFE /* CastleScene2.sks */; };
+		BD2D65B31EB44ACF0062BEFE /* CastleScene3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D65B21EB44ACF0062BEFE /* CastleScene3.swift */; };
 		BD3682C41EB3119D0061D9C5 /* LevelAScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3682C31EB3119D0061D9C5 /* LevelAScene.swift */; };
 		BD3682C61EB311AC0061D9C5 /* LevelCScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3682C51EB311AC0061D9C5 /* LevelCScene.swift */; };
 		BD3682C81EB311B70061D9C5 /* LevelDScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3682C71EB311B70061D9C5 /* LevelDScene.swift */; };
@@ -104,6 +106,7 @@
 		BD3682D21EB3273A0061D9C5 /* BasicAnimationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3682D11EB3273A0061D9C5 /* BasicAnimationComponent.swift */; };
 		BD437A711EB1C0EE006CD3BA /* Alien+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD437A701EB1C0EE006CD3BA /* Alien+Animations.swift */; };
 		BD4E13431EB33A4800520B59 /* RandomPathFinderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E13421EB33A4800520B59 /* RandomPathFinderComponent.swift */; };
+		BDD406B81EB3764D002E1680 /* RandomImpulseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD406B71EB3764D002E1680 /* RandomImpulseComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -196,6 +199,8 @@
 		BD2CDB841EB2EDC300AF2E50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD2CDB871EB2EEAF00AF2E50 /* starrySky.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = starrySky.sks; sourceTree = "<group>"; };
 		BD2CDB891EB2F5D900AF2E50 /* LevelUScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelUScene.swift; sourceTree = "<group>"; };
+		BD2D65B01EB44ABA0062BEFE /* CastleScene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CastleScene2.sks; sourceTree = "<group>"; };
+		BD2D65B21EB44ACF0062BEFE /* CastleScene3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastleScene3.swift; sourceTree = "<group>"; };
 		BD3682C31EB3119D0061D9C5 /* LevelAScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelAScene.swift; sourceTree = "<group>"; };
 		BD3682C51EB311AC0061D9C5 /* LevelCScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelCScene.swift; sourceTree = "<group>"; };
 		BD3682C71EB311B70061D9C5 /* LevelDScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDScene.swift; sourceTree = "<group>"; };
@@ -206,6 +211,7 @@
 		BD3682D11EB3273A0061D9C5 /* BasicAnimationComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAnimationComponent.swift; sourceTree = "<group>"; };
 		BD437A701EB1C0EE006CD3BA /* Alien+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alien+Animations.swift"; sourceTree = "<group>"; };
 		BD4E13421EB33A4800520B59 /* RandomPathFinderComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomPathFinderComponent.swift; sourceTree = "<group>"; };
+		BDD406B71EB3764D002E1680 /* RandomImpulseComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomImpulseComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,28 +269,18 @@
 		BD0B99961EB17DD90027746F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				BD4E13421EB33A4800520B59 /* RandomPathFinderComponent.swift */,
+				BDD406BD1EB37A11002E1680 /* MotionResponderComponents */,
+				BDD406BC1EB37A00002E1680 /* AnimationComponents */,
+				BDD406BB1EB379DA002E1680 /* PathFindingComponents */,
+				BDD406BA1EB379B8002E1680 /* TransformComponents */,
+				BDD406B91EB3798B002E1680 /* PhysicsComponents */,
 				BD0B99451EB17D370027746F /* HealthComponent.swift */,
-				BD0B99661EB17D510027746F /* MotionResponderComponent.swift */,
-				BD0B99181EB17CFE0027746F /* AnimationComponent.swift */,
 				BD0B99321EB17D120027746F /* CoreMotionInputComponent.swift */,
 				BD0B994E1EB17D3F0027746F /* InvisibilityComponent.swift */,
-				BD0B99161EB17CFE0027746F /* AgentComponent.swift */,
-				BD0B99301EB17D120027746F /* ContactHandlerComponent.swift */,
 				BD0B99481EB17D370027746F /* IntelligenceComponent.swift */,
-				BD0B99761EB17DB00027746F /* PhysicsComponent.swift */,
 				BD0B99441EB17D370027746F /* GroundComponent.swift */,
-				BD0B99511EB17D3F0027746F /* JumpComponent.swift */,
-				BD0B99521EB17D3F0027746F /* LandscapeMotionResponderComponent.swift */,
 				BD0B996E1EB17D790027746F /* OrientationComponent.swift */,
-				BD0B996F1EB17D790027746F /* OscillatorComponent.swift */,
-				BD0B99841EB17DB80027746F /* PortraitMotionResponderComponent.swift */,
-				BD0B996C1EB17D790027746F /* NodeNameComponent.swift */,
 				BD0B99581EB17D480027746F /* LaserComponent.swift */,
-				BD0B99941EB17DC60027746F /* TargetNodeComponent.swift */,
-				BD0B998B1EB17DBF0027746F /* RenderComponent.swift */,
-				BD29FC5D1EB1D98F00D3A4E2 /* GraphNodeComponent.swift */,
-				BD3682D11EB3273A0061D9C5 /* BasicAnimationComponent.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -337,6 +333,8 @@
 				BD2B46C01EB21297008D88B8 /* HouseScene.sks */,
 				BD2B46C21EB212A8008D88B8 /* ZooScene.sks */,
 				BD2B46C41EB212B9008D88B8 /* XRayScene.sks */,
+				BD2D65B01EB44ABA0062BEFE /* CastleScene2.sks */,
+				BD2D65B21EB44ACF0062BEFE /* CastleScene3.swift */,
 			);
 			name = SKSFiles;
 			sourceTree = "<group>";
@@ -420,6 +418,57 @@
 			name = Alien;
 			sourceTree = "<group>";
 		};
+		BDD406B91EB3798B002E1680 /* PhysicsComponents */ = {
+			isa = PBXGroup;
+			children = (
+				BD0B99301EB17D120027746F /* ContactHandlerComponent.swift */,
+				BD0B99761EB17DB00027746F /* PhysicsComponent.swift */,
+				BD0B99511EB17D3F0027746F /* JumpComponent.swift */,
+				BDD406B71EB3764D002E1680 /* RandomImpulseComponent.swift */,
+				BD0B996F1EB17D790027746F /* OscillatorComponent.swift */,
+			);
+			name = PhysicsComponents;
+			sourceTree = "<group>";
+		};
+		BDD406BA1EB379B8002E1680 /* TransformComponents */ = {
+			isa = PBXGroup;
+			children = (
+				BD0B998B1EB17DBF0027746F /* RenderComponent.swift */,
+				BD0B996C1EB17D790027746F /* NodeNameComponent.swift */,
+			);
+			name = TransformComponents;
+			sourceTree = "<group>";
+		};
+		BDD406BB1EB379DA002E1680 /* PathFindingComponents */ = {
+			isa = PBXGroup;
+			children = (
+				BD4E13421EB33A4800520B59 /* RandomPathFinderComponent.swift */,
+				BD0B99941EB17DC60027746F /* TargetNodeComponent.swift */,
+				BD0B99161EB17CFE0027746F /* AgentComponent.swift */,
+				BD29FC5D1EB1D98F00D3A4E2 /* GraphNodeComponent.swift */,
+			);
+			name = PathFindingComponents;
+			sourceTree = "<group>";
+		};
+		BDD406BC1EB37A00002E1680 /* AnimationComponents */ = {
+			isa = PBXGroup;
+			children = (
+				BD0B99181EB17CFE0027746F /* AnimationComponent.swift */,
+				BD3682D11EB3273A0061D9C5 /* BasicAnimationComponent.swift */,
+			);
+			name = AnimationComponents;
+			sourceTree = "<group>";
+		};
+		BDD406BD1EB37A11002E1680 /* MotionResponderComponents */ = {
+			isa = PBXGroup;
+			children = (
+				BD0B99661EB17D510027746F /* MotionResponderComponent.swift */,
+				BD0B99521EB17D3F0027746F /* LandscapeMotionResponderComponent.swift */,
+				BD0B99841EB17DB80027746F /* PortraitMotionResponderComponent.swift */,
+			);
+			name = MotionResponderComponents;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -499,6 +548,7 @@
 				BD2B46BB1EB21025008D88B8 /* PlaneScene.sks in Resources */,
 				BD2B46BF1EB21241008D88B8 /* NumberScene.sks in Resources */,
 				BD0B99551EB17D3F0027746F /* IslandScene.sks in Resources */,
+				BD2D65B11EB44ABA0062BEFE /* CastleScene2.sks in Resources */,
 				BD0B994B1EB17D370027746F /* Info.plist in Resources */,
 				BD0B995F1EB17D480027746F /* LavaScene.sks in Resources */,
 				BD0B990D1EB17C620027746F /* LaunchScreen.storyboard in Resources */,
@@ -513,6 +563,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDD406B81EB3764D002E1680 /* RandomImpulseComponent.swift in Sources */,
 				BD0B99361EB17D120027746F /* CoreMotionHelper.swift in Sources */,
 				BD0B99691EB17D510027746F /* MainMotionManager.swift in Sources */,
 				BD3682CE1EB3167A0061D9C5 /* Bee.swift in Sources */,
@@ -554,6 +605,7 @@
 				BD0B991E1EB17CFE0027746F /* AgentComponent.swift in Sources */,
 				BD0B99611EB17D480027746F /* LetterNode.swift in Sources */,
 				BD0B992C1EB17D080027746F /* BladeIsland.swift in Sources */,
+				BD2D65B31EB44ACF0062BEFE /* CastleScene3.swift in Sources */,
 				BD0B99371EB17D120027746F /* CoreMotionInputComponent.swift in Sources */,
 				BD0B99351EB17D120027746F /* ContactHandlerComponent.swift in Sources */,
 				BD0B992E1EB17D080027746F /* CollisionConfiguration.swift in Sources */,

@@ -35,7 +35,8 @@ extension PlatformerBaseScene{
         **/
         switch nonEnemyBody.categoryBitMask {
             case CollisionConfiguration.Barrier.categoryMask:
-                print("No contact logic implemented between enemy and barrier")
+                print("Enemy touched the barrier...Sending notification...")
+               
                 break
             default:
                 print("No contact logic implemented")

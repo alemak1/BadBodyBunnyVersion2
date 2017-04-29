@@ -38,12 +38,13 @@ class RandomPathFinderComponent: GKComponent{
     override func update(deltaTime seconds: TimeInterval) {
         super.update(deltaTime: seconds)
         
+        /**
         if inPathFindingMode(){ return } else {
             
             startPathfinding()
         }
             
-        
+        **/
     }
     
     override func didAddToEntity() {
@@ -137,9 +138,11 @@ class RandomPathFinderComponent: GKComponent{
         print("The startNode is \(startNode.debugDescription)")
         print("The endNode is \(endNode.debugDescription)")
         
+        print("Mesh graph debug description: \(meshGraph.debugDescription)")
+    
         meshGraph.connectToLowestCostNode(node: startNode, bidirectional: true)
         meshGraph.connectToLowestCostNode(node: endNode, bidirectional: true)
-            
+     
         return meshGraph.findPath(from: startNode, to: endNode)
     }
 }

@@ -54,15 +54,18 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
     //MARK: *************** Scene Life Cycle
     
     override func sceneDidLoad() {
+        super.sceneDidLoad()
         
+        
+    
+       
         
     }
     
-    
+
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         
-        super.didMove(to: view)
         
         configurePhysicsWorldProperties()
         
@@ -70,7 +73,8 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
         
         /** Add the world node **/
         addWorldNode()
-
+        
+        
         /** Enttiy manager is added after the world node has been added to the scene **/
         entityManager = PlatformerEntityManager(scene: self)
        
@@ -78,18 +82,21 @@ class PlatformerBaseScene: SKScene, SKPhysicsContactDelegate {
         player = Player()
         entityManager.addToWorld(player)
     
-      
         /** Add enemies, obstacles, and backgrounds to world from SKScene file. The player must be initialized before the smart enemies (i.e. those that use the player as a target agent) to be initialized from the scene file **/
         loadNodesFromSKSceneFile()
         
-       // let fly = Fly(position: CGPoint(x: -200, y: 50), scalingFactor: 1.2, meshGraph: placeholderGraph)
-       //entityManager.addToWorld(fly)
+
         
+       let fly = Fly(position: CGPoint(x:-100,y:100), scalingFactor: 1.2)
+        entityManager.addToWorld(fly)
+        
+    
        
         /** Scene-level state machine enters the active state **/
         stateMachine.enter(PlatformerLevelSceneActiveState.self)
-    }
     
+    }
+
     
     //MARK:     ********* Helper Functions for Setting Up Scene
     

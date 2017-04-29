@@ -28,11 +28,14 @@ class PlatformerEntityManager{
         
         let nodeNameComponent = GKComponentSystem(componentClass: NodeNameComponent.self)
         
-        let randomPathFinderComponent = GKComponentSystem(componentClass: RandomPathFinderComponent.self)
+        
+        //Physics Components
         
         let physicsComponent = GKComponentSystem(componentClass: PhysicsComponent.self)
         
         let oscillatorComponent = GKComponentSystem(componentClass: OscillatorComponent.self)
+        
+        let randomImpulseComponent = GKComponentSystem(componentClass: RandomImpulseComponent.self)
         
         let motionResponderComponentX = GKComponentSystem(componentClass: LandscapeMotionResponderComponentX.self)
         
@@ -52,7 +55,7 @@ class PlatformerEntityManager{
         
         let intelligenceComponent = GKComponentSystem(componentClass: IntelligenceComponent.self)
         
-        return [renderComponent, graphNodeComponent, randomPathFinderComponent, invisibilityComponent, nodeNameComponent, physicsComponent, oscillatorComponent, motionResponderComponentX, orientationComponent, animationComponent, jumpComponent, agentComponent, healthComponent, targetComponent, intelligenceComponent]
+        return [renderComponent, graphNodeComponent, invisibilityComponent, nodeNameComponent, physicsComponent, randomImpulseComponent , oscillatorComponent, motionResponderComponentX, orientationComponent, animationComponent, jumpComponent, agentComponent, healthComponent, targetComponent, intelligenceComponent]
     
     }()
     

@@ -110,6 +110,8 @@ class AlienAttackState: GKState{
         }
     }
     
+  
+    
     init(alienEntity: Alien){
         
         self.alienEntity = alienEntity
@@ -144,15 +146,23 @@ class AlienAttackState: GKState{
                     return
                 }
                 
+                
+                
                 guard let obstacleGraph = obstacleGraph else {
                     print("Could not get obstacle graph")
                     return
                 }
+                
+               
                     
                         print("Connecting start and end nodes to obstacle graph...")
+                
+                
+                
                         obstacleGraph.connectUsingObstacles(node: startGraphNode)
                         obstacleGraph.connectUsingObstacles(node: targetGraphNode)
-                    
+                
+                
                         print("Determining attack path...")
                         let attackPath = obstacleGraph.findPath(from: startGraphNode, to: targetGraphNode)
                     
@@ -231,9 +241,11 @@ class AlienAttackState: GKState{
         
     }
     
+  
     
     func registerForNotifications(){
         NotificationCenter.default.addObserver(self, selector: #selector(AlienAttackState.ChangeEnemyToInactiveState(notification:)), name: Notification.Name.PlayerDidTakeDamageNotification, object: nil)
+     
     }
     
     deinit {
