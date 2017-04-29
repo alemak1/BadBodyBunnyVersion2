@@ -95,7 +95,7 @@
 		BD2CDB881EB2EEAF00AF2E50 /* starrySky.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD2CDB871EB2EEAF00AF2E50 /* starrySky.sks */; };
 		BD2CDB8A1EB2F5D900AF2E50 /* LevelUScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2CDB891EB2F5D900AF2E50 /* LevelUScene.swift */; };
 		BD2D65B11EB44ABA0062BEFE /* CastleScene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD2D65B01EB44ABA0062BEFE /* CastleScene2.sks */; };
-		BD2D65B31EB44ACF0062BEFE /* CastleScene3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D65B21EB44ACF0062BEFE /* CastleScene3.swift */; };
+		BD2D65D61EB46F160062BEFE /* CastleScene3.sks in Resources */ = {isa = PBXBuildFile; fileRef = BD2D65D51EB46F160062BEFE /* CastleScene3.sks */; };
 		BD3682C41EB3119D0061D9C5 /* LevelAScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3682C31EB3119D0061D9C5 /* LevelAScene.swift */; };
 		BD3682C61EB311AC0061D9C5 /* LevelCScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3682C51EB311AC0061D9C5 /* LevelCScene.swift */; };
 		BD3682C81EB311B70061D9C5 /* LevelDScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3682C71EB311B70061D9C5 /* LevelDScene.swift */; };
@@ -200,7 +200,7 @@
 		BD2CDB871EB2EEAF00AF2E50 /* starrySky.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = starrySky.sks; sourceTree = "<group>"; };
 		BD2CDB891EB2F5D900AF2E50 /* LevelUScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelUScene.swift; sourceTree = "<group>"; };
 		BD2D65B01EB44ABA0062BEFE /* CastleScene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CastleScene2.sks; sourceTree = "<group>"; };
-		BD2D65B21EB44ACF0062BEFE /* CastleScene3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastleScene3.swift; sourceTree = "<group>"; };
+		BD2D65D51EB46F160062BEFE /* CastleScene3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CastleScene3.sks; sourceTree = "<group>"; };
 		BD3682C31EB3119D0061D9C5 /* LevelAScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelAScene.swift; sourceTree = "<group>"; };
 		BD3682C51EB311AC0061D9C5 /* LevelCScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelCScene.swift; sourceTree = "<group>"; };
 		BD3682C71EB311B70061D9C5 /* LevelDScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelDScene.swift; sourceTree = "<group>"; };
@@ -334,7 +334,7 @@
 				BD2B46C21EB212A8008D88B8 /* ZooScene.sks */,
 				BD2B46C41EB212B9008D88B8 /* XRayScene.sks */,
 				BD2D65B01EB44ABA0062BEFE /* CastleScene2.sks */,
-				BD2D65B21EB44ACF0062BEFE /* CastleScene3.swift */,
+				BD2D65D51EB46F160062BEFE /* CastleScene3.sks */,
 			);
 			name = SKSFiles;
 			sourceTree = "<group>";
@@ -545,6 +545,7 @@
 				BD2B46C51EB212B9008D88B8 /* XRayScene.sks in Resources */,
 				BD0B995E1EB17D480027746F /* Lava.sks in Resources */,
 				BD2B46B71EB21007008D88B8 /* CloudScene.sks in Resources */,
+				BD2D65D61EB46F160062BEFE /* CastleScene3.sks in Resources */,
 				BD2B46BB1EB21025008D88B8 /* PlaneScene.sks in Resources */,
 				BD2B46BF1EB21241008D88B8 /* NumberScene.sks in Resources */,
 				BD0B99551EB17D3F0027746F /* IslandScene.sks in Resources */,
@@ -605,7 +606,6 @@
 				BD0B991E1EB17CFE0027746F /* AgentComponent.swift in Sources */,
 				BD0B99611EB17D480027746F /* LetterNode.swift in Sources */,
 				BD0B992C1EB17D080027746F /* BladeIsland.swift in Sources */,
-				BD2D65B31EB44ACF0062BEFE /* CastleScene3.swift in Sources */,
 				BD0B99371EB17D120027746F /* CoreMotionInputComponent.swift in Sources */,
 				BD0B99351EB17D120027746F /* ContactHandlerComponent.swift in Sources */,
 				BD0B992E1EB17D080027746F /* CollisionConfiguration.swift in Sources */,
